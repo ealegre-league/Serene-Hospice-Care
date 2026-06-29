@@ -36,11 +36,32 @@
   </style>
 <style>
 .svc-dd{position:fixed;top:74px;left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid #E8D8F5;border-radius:18px;box-shadow:0 16px 48px rgba(149,117,205,0.2);padding:28px 28px 18px;z-index:9999;width:700px;pointer-events:none;opacity:0;transition:opacity .2s ease,transform .2s ease;}
+.nav-svc-wrap.open .svc-dd{pointer-events:auto;opacity:1;transform:translateX(-50%) translateY(0);}
 .nav-svc-wrap:hover .svc-dd{pointer-events:auto;opacity:1;transform:translateX(-50%) translateY(0);}
 .svc-dd a:hover{background:#F5F0FB;color:#7A5ABE!important;}
+.nav-svc-wrap.open .svc-arrow{transform:rotate(180deg);}
 .nav-svc-wrap:hover .svc-arrow{transform:rotate(180deg);}
-.nav-svc-wrap::before{content:'';display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.92);z-index:9997;}
+.nav-svc-wrap::before{content:'';display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.92);z-index:9997;pointer-events:none;}
+.nav-svc-wrap.open::before{display:block;}
 .nav-svc-wrap:hover::before{display:block;}
+</style>
+
+<style>
+@media(max-width:800px){
+  div[style*="grid-template-columns:420px"],
+  div[style*="grid-template-columns:minmax(0,440px)"],
+  div[style*="grid-template-columns:minmax(0,1fr) minmax(0,360px)"],
+  div[style*="grid-template-columns:repeat(4,1fr)"],
+  div[style*="grid-template-columns:repeat(3,1fr)"],
+  div[style*="grid-template-columns:repeat(3,minmax(0,1fr))"],
+  div[style*="grid-template-columns:repeat(2,1fr)"],
+  div[style*="grid-template-columns:1fr 1fr"],
+  div[style*="grid-template-columns:1fr 1.4fr"]{grid-template-columns:1fr!important;}
+  div[style*="grid-template-columns:1.6fr 1fr 1fr 1fr"]{grid-template-columns:1fr 1fr!important;}
+}
+@media(max-width:500px){
+  div[style*="grid-template-columns:1.6fr 1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
+}
 </style>
 </head>
 <body>
@@ -171,7 +192,7 @@
 <!-- DETAIL CARDS -->
 <section style="padding:40px 40px 80px;background:white;">
   <div style="max-width:1200px;margin:0 auto;">
-    <div class="detail-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;">
       
         <div style="background:white;border-radius:18px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;border:1.5px solid #E8D8F5;">
           <div style="font-size:28px;">💊</div>
@@ -235,7 +256,7 @@
         <h4 style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:20px;color:rgba(255,255,255,.55);">Contact</h4>
         <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(255,255,255,.85);">
           <div>6047 Tampa Ave, Ste 204<br>Tarzana, CA 91356</div>
-          <a href="tel:9493374833" style="color:rgba(255,255,255,.85);">949-337-4833</a>
+          <a href="tel:9493374833" style="color:rgba(255,255,255,.85);">Phone: 949-337-4833</a>
           <div>Fax: 949-353-5481</div>
           <a href="mailto:info@serene-hospice.com" style="color:rgba(255,255,255,.85);word-break:break-all;">info@serene-hospice.com</a>
         </div>
@@ -254,5 +275,15 @@
     </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var wrap=document.querySelector('.nav-svc-wrap');
+  if(!wrap)return;
+  var trigger=wrap.querySelector('a');
+  trigger.addEventListener('click',function(e){e.preventDefault();wrap.classList.toggle('open');});
+  document.addEventListener('click',function(e){if(!wrap.contains(e.target))wrap.classList.remove('open');});
+})();
+</script>
 </body>
 </html>
