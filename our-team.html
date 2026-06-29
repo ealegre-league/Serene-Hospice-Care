@@ -40,35 +40,7 @@ img{max-width:100%!important;}
   div[style*="width:1px;background"]{display:none!important;}
 }
 </style>
-<script>
-(function(){
-  function bindNav(){
-    var btn=document.querySelector('.mobile-menu-btn');
-    var nav=document.getElementById('mobileNav');
-    if(!btn||!nav) return false;
-    btn.removeEventListener('click',btn._sh_click||function(){});
-    btn._sh_click=function(e){e.stopPropagation();nav.classList.toggle('open');};
-    btn.addEventListener('click',btn._sh_click);
-    nav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click',function(){nav.classList.remove('open');});
-    });
-    document.addEventListener('click',function(e){
-      if(!nav.contains(e.target)&&!btn.contains(e.target)) nav.classList.remove('open');
-    });
-    return true;
-  }
-  // Try immediately
-  if(!bindNav()){
-    // Watch for React to mount the elements
-    var obs=new MutationObserver(function(){
-      if(bindNav()) obs.disconnect();
-    });
-    obs.observe(document.body||document.documentElement,{childList:true,subtree:true});
-    // Safety fallback after 5s
-    setTimeout(function(){obs.disconnect();bindNav();},5000);
-  }
-})();
-</script>
+
 <title>Our Team – Serene Hospice LLC</title>
   
   <style>/* ── Serene Hospice LLC — Responsive Styles ── */
@@ -262,7 +234,7 @@ img { max-width:100%; display:block; }
   div[style*="grid-template-columns:minmax(0,1fr) minmax(0,360px)"],
   div[style*="grid-template-columns:repeat(4,1fr)"],
   div[style*="grid-template-columns:repeat(3,1fr)"],
-  div[style*="grid-template-columns:repeat(3,minmax(0,1fr))"],
+  div[style*="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))"],
   div[style*="grid-template-columns:repeat(2,1fr)"],
   div[style*="grid-template-columns:1fr 1fr"],
   div[style*="grid-template-columns:1fr 1.4fr"]{grid-template-columns:1fr!important;}
@@ -383,7 +355,7 @@ img { max-width:100%; display:block; }
 
 <!-- TEAM CARDS -->
 <section style="padding:20px 40px 80px;background:white;">
-  <div class="sh-grid-3" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
+  <div class="sh-grid-3" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
     <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
       <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">👨‍⚕️</div>
       <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Physician</h3>
