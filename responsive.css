@@ -69,7 +69,7 @@ img{max-width:100%!important;}
   }
 })();
 </script>
-<title>Insurance &amp; Coverage – Serene Hospice LLC</title>
+<title>Our Team – Serene Hospice LLC</title>
   <script src="animations.js"></script>
   <link rel="stylesheet" href="responsive.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lato:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
@@ -178,8 +178,8 @@ img{max-width:100%!important;}
   </div>
 </div>
     <a href="eligibility.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Eligibility</a>
-    <a href="insurance.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid #A98BD0;">Insurance</a>
-    <a href="our-team.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Our Team</a>
+    <a href="insurance.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Insurance</a>
+    <a href="our-team.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid #A98BD0;">Our Team</a>
     <a href="locations.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Locations</a>
     <a href="faq.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">FAQ</a>
     <a href="contact.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Contact</a>
@@ -222,63 +222,63 @@ img{max-width:100%!important;}
 <section style="padding:120px 40px 80px;background:linear-gradient(150deg,#D8C5EC 0%,#E8D8F5 50%,#F3ECF9 100%);position:relative;overflow:hidden;">
   <div style="position:absolute;top:-80px;right:-80px;width:380px;height:380px;border-radius:50%;background:rgba(255,255,255,0.3);pointer-events:none;"></div>
   <div style="max-width:1200px;margin:0 auto;animation:fadeUp .8s ease both;">
-    <div style="display:inline-block;background:rgba(255,255,255,0.35);color:#3D1565;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;">Coverage &amp; Payment</div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:52px;color:#3D1565;font-weight:700;margin-bottom:18px;line-height:1.15;">Who Pays for Hospice?</h1>
-    <p style="font-size:19px;color:#5A3A8A;max-width:640px;line-height:1.75;font-weight:300;">Hospice care is a covered benefit under most major insurance plans. Admissions are based on patient need. Admissions are never based on ability to pay.</p>
+    <div style="display:inline-block;background:rgba(255,255,255,0.35);color:#3D1565;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;">Dedicated Professionals</div>
+    <h1 style="font-family:'Playfair Display',serif;font-size:52px;color:#3D1565;font-weight:700;margin-bottom:18px;line-height:1.15;">Our Hospice Team</h1>
+    <p style="font-size:19px;color:#5A3A8A;max-width:640px;line-height:1.75;font-weight:300;">A caring team of professionals and volunteers united by one purpose, providing outstanding hospice care with compassion, dignity, and expertise.</p>
   </div>
   <div style="position:absolute;bottom:-1px;left:0;right:0;pointer-events:none;"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:60px;" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="white"></path></svg></div>
 </section>
 
-<!-- PHOTO STRIP -->
-<section style="padding:0 40px 60px;background:white;">
-  <div class="sh-grid-2" style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px;">
-    <div style="border-radius: 20px;margin: 7px; box-shadow: 0 12px 40px rgba(149,117,205,0.12)">
-      <img src="uploads/pasted-1782318633422-0.png" alt="Family meeting with care team" style="width: 100%; height: auto; display: block; border-radius: 20px">
-    </div>
-    <div style="border-radius: 20px;margin: 7px; box-shadow: 0 12px 40px rgba(149,117,205,0.12)">
-      <img src="uploads/hospice_image_1_1.png" alt="Nurse caring for patient" style="width: 100%; height: auto; display: block; border-radius: 20px">
-    </div>
+<!-- TEAM PHOTO -->
+<!-- TEAM INTRO -->
+<section style="padding:70px 40px 50px;background:white;">
+  <div style="max-width:800px;margin:0 auto;text-align:center;">
+    <p style="font-size:17px;line-height:1.9;color:#5A4A7A;">Our hospice team follows a personalized plan of physical, emotional, and spiritual care under the supervision of the patient's physician and our hospice medical director. The patient's plan of care is continuously renewed and adapted to meet the patient's changing needs.</p>
   </div>
 </section>
 
-<!-- COVERAGE OPTIONS -->
-<section style="padding:40px 40px 80px;background:white;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:52px;">
-      <h2 style="font-family:'Playfair Display',serif;font-size:38px;color:#3D1565;font-weight:700;margin-bottom:14px;text-align:center;">Coverage We Accept</h2>
-      <p style="font-size:16px;color:#5A4A7A;max-width:580px;margin:0 auto;line-height:1.75;text-align:center;">Serene Hospice LLC works with a wide range of insurance providers so you can focus on what matters most, your loved one's comfort and dignity.</p>
+<!-- TEAM CARDS -->
+<section style="padding:20px 40px 80px;background:white;">
+  <div class="sh-grid-3" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
+    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
+      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">👨‍⚕️</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Physician</h3>
+      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">The hospice physician works in close conjunction with the patient's own physician to provide expert pain and symptom management, ensuring comfort is always the top priority.</p>
     </div>
-    <div class="sh-grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:52px;">
-      <div style="background: #F5F0FB; border-radius: 22px; padding: 40px 32px; text-align: center; border-top: 5px solid #9575CD; margin: 5px">
-        <div style="font-size:48px;margin-bottom:18px;">🏛️</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:#3D1565;margin-bottom:12px;font-weight:700;">Medicare</h3>
-        <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Medicare Part A covers the full cost of hospice care for eligible beneficiaries, including all services, medications related to the terminal diagnosis, and equipment.</p>
-      </div>
-      <div style="background: #F5F0FB; border-radius: 22px; padding: 40px 32px; text-align: center; border-top: 5px solid #A98BD0; margin: 5px">
-        <div style="font-size:48px;margin-bottom:18px;">🌿</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:#3D1565;margin-bottom:12px;font-weight:700;">Medi-Cal / Medicaid</h3>
-        <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">California's Medi-Cal program provides comprehensive hospice coverage for qualifying patients, ensuring that financial status never stands between a patient and the care they need.</p>
-      </div>
-      <div style="background: #F5F0FB; border-radius: 22px; padding: 40px 32px; text-align: center; border-top: 5px solid #CAAEE4; margin: 5px">
-        <div style="font-size:48px;margin-bottom:18px;">🏢</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:#3D1565;margin-bottom:12px;font-weight:700;">Managed Care &amp; HMO</h3>
-        <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Most managed care HMO plans and IPAs include hospice as a covered benefit. Our admissions team will verify your specific plan and handle all coordination on your behalf.</p>
-      </div>
-      <div style="background: linear-gradient(135deg,#9575CD,#B8A0E0); border-radius: 22px; padding: 40px 32px; text-align: center; grid-column: span 3; margin: 5px">
-        <div style="font-size:48px;margin-bottom:18px;">💳</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:white;margin-bottom:12px;font-weight:700;">Private Health Insurance</h3>
-        <p style="font-size:15px;color:rgba(255,255,255,.9);line-height:1.75;max-width:680px;margin:0 auto;">Most private health insurance companies include hospice care as a covered benefit. We work directly with your insurer to simplify the process and eliminate administrative burden during this difficult time.</p>
-      </div>
+    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
+      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🩺</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">RN Case Managers</h3>
+      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our registered nurse case managers coordinate all aspects of care, making regular home visits to monitor the patient, teach caregivers, and provide skilled clinical care with compassion.</p>
     </div>
-
-    <!-- No cost barrier -->
-    <div class="sh-flex-row" style="background:#EDE0F8;border-radius:22px;padding:44px 52px;display:flex;gap:40px;align-items:center;">
-      <div style="flex-shrink:0;width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:32px;">💜</div>
-      <div style="flex:1;">
-        <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:#3D1565;margin-bottom:10px;font-weight:700;">No Financial Barrier to Care</h3>
-        <p style="font-size:15px;color:#5A4A7A;line-height:1.75;">Admissions to Serene Hospice LLC are based on the patient's needs rather than the ability to pay. We are committed to ensuring that every patient who needs hospice care can access it, regardless of financial circumstances. Please contact us to discuss options, we will find a way to help.</p>
-      </div>
-      <a href="contact.html" style="flex-shrink:0;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:14px 30px;border-radius:50px;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 4px 14px rgba(149,117,205,0.25);">Talk to Us</a>
+    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
+      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🤝</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Social Workers</h3>
+      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our licensed social workers help families understand and cope with the emotional and financial challenges of this journey, providing guidance, counseling, and practical resources.</p>
+    </div>
+    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
+      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🙏</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Chaplains</h3>
+      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our interfaith chaplains are always on hand to offer spiritual support, comfort, and peace to patients and their families, honoring every faith tradition with sensitivity and respect.</p>
+    </div>
+    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
+      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🌟</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Volunteers</h3>
+      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our trained volunteers provide companionship, personal care, and temporary relief for caregivers, offering their time and heart to make each patient's days a little brighter.</p>
+    </div>
+    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
+      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🧼</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Home Health Aides</h3>
+      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our certified home health aides provide hands-on personal care and conduct regular visits to assist with activities of daily living, ensuring patient comfort and dignity at home.</p>
+    </div>
+    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; grid-column: span 1; margin: 5px">
+      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">📞</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Nursing On-Call Services</h3>
+      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Available 24/7 to answer caregiver questions and provide guidance. Continuous Care is available during medical crises; Respite Care provides temporary relief to caregivers when needed.</p>
+    </div>
+    <div style="background: linear-gradient(135deg,#9575CD,#B8A0E0); border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px; grid-column: span 2">
+      <div style="width:60px;height:60px;border-radius:18px;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:26px;">🏥</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:white;font-weight:700;">Hospice In-Patient Care</h3>
+      <p style="font-size:14px;color:rgba(255,255,255,.9);line-height:1.75;">For patients requiring short-term acute symptom management or pain control that cannot be managed at home, our team coordinates inpatient care at skilled nursing facilities, with continuous monitoring and support for the family throughout.</p>
     </div>
   </div>
 </section>

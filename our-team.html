@@ -3,123 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* MOBILE NAV */
-.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;margin-left:auto;flex-shrink:0;}
-.mobile-menu-btn span{display:block;width:24px;height:2px;background:#8565BE;border-radius:2px;}
-.mobile-nav{display:none;position:fixed;top:74px;left:0;right:0;background:rgba(255,255,255,.99);padding:20px 24px;flex-direction:column;z-index:9999;box-shadow:0 8px 24px rgba(149,117,205,.18);}
-.mobile-nav.open{display:flex;}
-.mobile-nav a{color:#8565BE!important;font-size:15px;font-weight:700;padding:14px 0;border-bottom:1px solid #EDE0F8!important;display:block;}
-.mobile-nav a:last-child{background:linear-gradient(135deg,#9575CD,#B8A0E0)!important;color:white!important;padding:14px 20px;border-radius:50px;text-align:center;margin-top:12px;border-bottom:none!important;}
-/* OVERFLOW */
-html,body{overflow-x:hidden!important;}
-*{box-sizing:border-box;}
-img{max-width:100%!important;}
-/* TABLET 900px */
-@media(max-width:900px){
-  .mobile-menu-btn{display:flex!important;}
-  header nav,.header-cta{display:none!important;}
-  section,footer{padding-left:20px!important;padding-right:20px!important;}
-  .sh-grid-3,.sh-grid-4{grid-template-columns:1fr 1fr!important;gap:16px!important;}
-  .sh-footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}
-  .sh-flex-row,.flex-col-mobile,.hero-flex{flex-direction:column!important;gap:24px!important;}
-  .sh-fixed-col,.hero-card,.full-width-mobile{flex:none!important;width:100%!important;max-width:100%!important;}
-  div[style*="flex:0 0"]{flex:none!important;width:100%!important;max-width:100%!important;}
-}
-/* MOBILE 600px */
-@media(max-width:600px){
-  .sh-grid-2,.sh-grid-3,.sh-grid-4,.sh-footer-grid{grid-template-columns:1fr!important;gap:14px!important;}
-  .sh-flex-row,.flex-col-mobile,.hero-flex{flex-direction:column!important;gap:16px!important;}
-  .sh-fixed-col,.hero-card,.full-width-mobile{flex:none!important;width:100%!important;}
-  div[style*="flex:0 0"]{flex:none!important;width:100%!important;max-width:100%!important;}
-  h1{font-size:28px!important;line-height:1.2!important;}
-  h2{font-size:22px!important;}
-  h3{font-size:17px!important;}
-  section{padding-top:40px!important;padding-bottom:40px!important;}
-  footer{padding-top:36px!important;padding-bottom:20px!important;}
-  div[style*="width:1px;background"]{display:none!important;}
-}
-</style>
-<script>
-(function(){
-  function bindNav(){
-    var btn=document.querySelector('.mobile-menu-btn');
-    var nav=document.getElementById('mobileNav');
-    if(!btn||!nav) return false;
-    btn.removeEventListener('click',btn._sh_click||function(){});
-    btn._sh_click=function(e){e.stopPropagation();nav.classList.toggle('open');};
-    btn.addEventListener('click',btn._sh_click);
-    nav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click',function(){nav.classList.remove('open');});
-    });
-    document.addEventListener('click',function(e){
-      if(!nav.contains(e.target)&&!btn.contains(e.target)) nav.classList.remove('open');
-    });
-    return true;
-  }
-  // Try immediately
-  if(!bindNav()){
-    // Watch for React to mount the elements
-    var obs=new MutationObserver(function(){
-      if(bindNav()) obs.disconnect();
-    });
-    obs.observe(document.body||document.documentElement,{childList:true,subtree:true});
-    // Safety fallback after 5s
-    setTimeout(function(){obs.disconnect();bindNav();},5000);
-  }
-})();
-</script>
-<title>Our Team – Serene Hospice LLC</title>
-  <script src="animations.js"></script>
-  <link rel="stylesheet" href="responsive.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lato:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
-  <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Lato',sans-serif;color:#3D1565;background:#fff;overflow-x:hidden;}a{text-decoration:none;}
-    /* ── MOBILE NAV ── */
+
+
+<title>Locations – Serene Hospice LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Lato',sans-serif;color:#3D1565;background:#fff;overflow-x:hidden;}
+    a{text-decoration:none;}
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;margin-left:auto;flex-shrink:0;}
     .mobile-menu-btn span{display:block;width:24px;height:2px;background:#8565BE;border-radius:2px;}
-    .mobile-nav{display:none;position:fixed;top:74px;left:0;right:0;background:rgba(255,255,255,.99);backdrop-filter:blur(8px);padding:20px 24px;flex-direction:column;gap:0;z-index:999;box-shadow:0 8px 24px rgba(149,117,205,.18);}
+    .mobile-nav{display:none;position:fixed;top:74px;left:0;right:0;background:rgba(255,255,255,.99);backdrop-filter:blur(8px);padding:20px 24px;flex-direction:column;gap:0;z-index:9999;box-shadow:0 8px 24px rgba(149,117,205,.18);}
     .mobile-nav.open{display:flex;}
-    .mobile-nav a{color:#8565BE!important;font-size:15px;font-weight:700;padding:14px 0;border-bottom:1px solid #EDE0F8!important;display:block;text-decoration:none;}
+    .mobile-nav a{color:#8565BE!important;font-size:15px;font-weight:700;padding:14px 0;border-bottom:1px solid #EDE0F8!important;display:block;}
     .mobile-nav a:last-child{background:linear-gradient(135deg,#9575CD,#B8A0E0)!important;color:white!important;padding:14px 20px;border-radius:50px;text-align:center;margin-top:12px;border-bottom:none!important;}
-    /* ── OVERFLOW PREVENTION ── */
     html,body{overflow-x:hidden!important;}
-    *{box-sizing:border-box;}
-    img{max-width:100%;}
-    /* ── TABLET ── */
     @media(max-width:900px){
       .mobile-menu-btn{display:flex!important;}
       header nav,.header-cta{display:none!important;}
       section,footer{padding-left:20px!important;padding-right:20px!important;}
-      .sh-grid-3,.sh-grid-4{grid-template-columns:1fr 1fr!important;gap:16px!important;}
-      .sh-footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}
-      .sh-flex-row,.flex-col-mobile{flex-direction:column!important;gap:24px!important;}
-      .sh-fixed-col,.full-width-mobile{flex:none!important;width:100%!important;max-width:100%!important;}
-      .hero-flex{flex-direction:column!important;gap:28px!important;}
-      .hero-card{flex:none!important;width:100%!important;}
-      h1{font-size:32px!important;line-height:1.2!important;}
-      h2{font-size:24px!important;}
+      .loc-grid{grid-template-columns:1fr!important;}
+      .area-grid{grid-template-columns:1fr 1fr!important;}
     }
-    /* ── MOBILE ── */
     @media(max-width:600px){
-      .sh-grid-2,.sh-grid-3,.sh-grid-4,.sh-footer-grid{grid-template-columns:1fr!important;gap:14px!important;}
-      .sh-flex-row,.flex-col-mobile{flex-direction:column!important;gap:16px!important;}
-      .sh-fixed-col,.full-width-mobile{flex:none!important;width:100%!important;}
-      div[style*="width:1px;background"]{display:none!important;}
       section{padding-top:40px!important;padding-bottom:40px!important;}
       footer{padding-top:36px!important;padding-bottom:20px!important;}
       h1{font-size:28px!important;}
-      h2{font-size:20px!important;}
-      h3{font-size:16px!important;}
+      .area-grid{grid-template-columns:1fr!important;}
     }
-    .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;}
-    .mobile-menu-btn span{display:block;width:24px;height:2px;background:#8565BE;border-radius:2px;transition:all .3s;}
-    .mobile-nav{display:none;position:fixed;top:74px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(8px);padding:20px 24px;flex-direction:column;gap:0;z-index:999;box-shadow:0 8px 24px rgba(149,117,205,0.15);}
-    .mobile-nav.open{display:flex;}
-    .mobile-nav a{color:#8565BE;font-size:15px;font-weight:700;letter-spacing:.5px;padding:14px 0;border-bottom:1px solid #EDE0F8;display:block;}
-    @media(max-width:900px){
-      .mobile-menu-btn{display:flex!important;}
-      header nav,.header-cta{display:none!important;}
-    }@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}</style>
+    .sh-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;}
+    @media(max-width:900px){.sh-footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}}
+    @media(max-width:600px){.sh-footer-grid{grid-template-columns:1fr!important;}}
+    .area-chip{background:#F5F0FB;border:1.5px solid #E0D0F0;border-radius:50px;padding:9px 18px;font-size:13px;color:#5A3A8A;font-weight:600;display:inline-block;}
+  </style>
 <style>
 .svc-dd{position:fixed;top:74px;left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid #E8D8F5;border-radius:18px;box-shadow:0 16px 48px rgba(149,117,205,0.2);padding:28px 28px 18px;z-index:9999;width:700px;pointer-events:none;opacity:0;transition:opacity .2s ease,transform .2s ease;}
 .nav-svc-wrap:hover .svc-dd{pointer-events:auto;opacity:1;transform:translateX(-50%) translateY(0);}
@@ -131,68 +47,38 @@ img{max-width:100%!important;}
 </head>
 <body>
 <!-- NAV -->
-<header style="position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);box-shadow:0 2px 18px rgba(149,117,205,0.09);height:74px;display:flex;align-items:center;padding:0 40px;gap:24px;">
+<header style="position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);box-shadow:0 2px 18px rgba(149,117,205,0.09);height:74px;display:flex;align-items:center;padding:0 24px;gap:16px;">
   <a href="index.html" style="flex-shrink:0;"><img src="uploads/logo.png" alt="Serene Hospice LLC" style="height:52px;width:auto;"></a>
-  <nav style="flex:1;display:flex;justify-content:center;align-items:center;gap:24px;">
-    <a href="about.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">About</a>
-    <div style="position:relative;display:inline-flex;align-items:center;" class="nav-svc-wrap">
-  <a href="services.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;display:inline-flex;align-items:center;gap:5px;">Services <svg class="svc-arrow" width="13" height="8" viewBox="0 0 9 5" fill="none" style="margin-top:2px;transition:transform .2s ease;flex-shrink:0;"><path d="M1 1l3.5 3L8 1" stroke="#8565BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <nav style="flex:1;display:flex;justify-content:center;align-items:center;gap:20px;">
+    <a href="about.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">About</a>
+<div style="position:relative;display:inline-flex;align-items:center;" class="nav-svc-wrap">
+  <a href="services.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;display:inline-flex;align-items:center;gap:5px;">Services <svg class="svc-arrow" width="13" height="8" viewBox="0 0 9 5" fill="none" style="margin-top:2px;transition:transform .2s ease;flex-shrink:0;"><path d="M1 1l3.5 3L8 1" stroke="#8565BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <div class="svc-dd">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;">
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Clinical</div>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <a href="service-medical-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">👨‍⚕️ Medical Care</a>
-          <a href="service-skilled-nursing.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🩺 Skilled Nursing</a>
-          <a href="service-therapy.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🏃 Therapy Evaluations</a>
-          <a href="service-medications.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">💊 Medications &amp; Supplies</a>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Personal Care</div>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <a href="service-home-health-aide.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🧼 Home Health Aide</a>
-          <a href="service-personal-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🍽️ Personal Care Asst.</a>
-          <a href="service-nutrition.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🥗 Nutritional Counseling</a>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Support</div>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <a href="service-social-worker.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🤝 Social Worker</a>
-          <a href="service-spiritual-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🙏 Spiritual Counseling</a>
-          <a href="service-bereavement.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">💛 Bereavement &amp; Grief</a>
-          <a href="service-caregiver-training.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">👨‍👩‍👧 Caregiver Training</a>
-          <a href="service-volunteer.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🌟 Volunteer Support</a>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Crisis Care</div>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <a href="service-crisis-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🚨 24-Hour Crisis Care</a>
-          <a href="service-inpatient-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🏨 Short-Term Inpatient</a>
-        </div>
-      </div>
+      <div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Clinical</div><div style="display:flex;flex-direction:column;gap:1px;"><a href="service-medical-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">👨‍⚕️ Medical Care</a><a href="service-skilled-nursing.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🩺 Skilled Nursing</a><a href="service-therapy.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🏃 Therapy Evaluations</a><a href="service-medications.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">💊 Medications &amp; Supplies</a></div></div>
+      <div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Personal Care</div><div style="display:flex;flex-direction:column;gap:1px;"><a href="service-home-health-aide.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🧼 Home Health Aide</a><a href="service-personal-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🍽️ Personal Care Asst.</a><a href="service-nutrition.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🥗 Nutritional Counseling</a></div></div>
+      <div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Support</div><div style="display:flex;flex-direction:column;gap:1px;"><a href="service-social-worker.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🤝 Social Worker</a><a href="service-spiritual-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🙏 Spiritual Counseling</a><a href="service-bereavement.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">💛 Bereavement &amp; Grief</a><a href="service-caregiver-training.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">👨‍👩‍👧 Caregiver Training</a><a href="service-volunteer.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🌟 Volunteer Support</a></div></div>
+      <div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Crisis Care</div><div style="display:flex;flex-direction:column;gap:1px;"><a href="service-crisis-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🚨 24-Hour Crisis Care</a><a href="service-inpatient-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🏨 Short-Term Inpatient</a></div></div>
     </div>
-    <a href="services.html" style="display:block;text-align:center;margin-top:14px;padding-top:12px;border-top:1px solid #EDE0F8;font-size:12px;font-weight:700;color:#8565BE;letter-spacing:.5px;">View All Services →</a>
+    <a href="services.html" style="display:block;text-align:center;margin-top:14px;padding-top:12px;border-top:1px solid #EDE0F8;font-size:12px;font-weight:700;color:#8565BE;">View All Services →</a>
   </div>
 </div>
-    <a href="eligibility.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Eligibility</a>
-    <a href="insurance.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Insurance</a>
-    <a href="our-team.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid #A98BD0;">Our Team</a>
-    <a href="locations.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Locations</a>
-    <a href="faq.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">FAQ</a>
-    <a href="contact.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Contact</a>
+    <a href="eligibility.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Eligibility</a>
+    <a href="insurance.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Insurance</a>
+    <a href="our-team.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Our Team</a>
+    <a href="locations.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid #A98BD0;">Locations</a>
+    <a href="faq.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">FAQ</a>
+    <a href="contact.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Contact</a>
   </nav>
-  <a href="tel:9493374833" class="header-cta" style="flex-shrink:0;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:11px 24px;border-radius:50px;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 4px 14px rgba(149,117,205,0.25);display:flex;align-items:center;gap:8px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"></path></svg>949-337-4833</a>
-
-  <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+  <a href="tel:9493374833" class="header-cta" style="flex-shrink:0;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:11px 22px;border-radius:50px;font-weight:700;font-size:13px;white-space:nowrap;box-shadow:0 4px 14px rgba(149,117,205,0.25);display:flex;align-items:center;gap:7px;">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"></path></svg>
+    949-337-4833
+  </a>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mobileNavLoc').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </header>
-
-<!-- MOBILE NAV -->
-<div id="mobileNav" class="mobile-nav">
+<div id="mobileNavLoc" class="mobile-nav">
   <a href="about.html">About</a>
   <a href="services.html" style="font-weight:900!important;">Services</a>
   <a href="service-medical-care.html" style="padding-left:20px!important;font-size:13px!important;color:#5A3A8A!important;">👨‍⚕️ Medical Care</a>
@@ -215,70 +101,155 @@ img{max-width:100%!important;}
   <a href="locations.html">Locations</a>
   <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
-  <a href="tel:9493374833" style="background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white!important;padding:14px 20px;border-radius:50px;text-align:center;margin-top:4px;border-bottom:none!important;">📞 949-337-4833</a>
+  <a href="tel:9493374833">📞 949-337-4833</a>
 </div>
 
 <!-- HERO -->
-<section style="padding:120px 40px 80px;background:linear-gradient(150deg,#D8C5EC 0%,#E8D8F5 50%,#F3ECF9 100%);position:relative;overflow:hidden;">
+<section style="padding:130px 40px 80px;background:linear-gradient(150deg,#D8C5EC 0%,#E8D8F5 50%,#F3ECF9 100%);position:relative;overflow:hidden;">
   <div style="position:absolute;top:-80px;right:-80px;width:380px;height:380px;border-radius:50%;background:rgba(255,255,255,0.3);pointer-events:none;"></div>
-  <div style="max-width:1200px;margin:0 auto;animation:fadeUp .8s ease both;">
-    <div style="display:inline-block;background:rgba(255,255,255,0.35);color:#3D1565;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;">Dedicated Professionals</div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:52px;color:#3D1565;font-weight:700;margin-bottom:18px;line-height:1.15;">Our Hospice Team</h1>
-    <p style="font-size:19px;color:#5A3A8A;max-width:640px;line-height:1.75;font-weight:300;">A caring team of professionals and volunteers united by one purpose, providing outstanding hospice care with compassion, dignity, and expertise.</p>
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:inline-block;background:rgba(255,255,255,0.35);color:#3D1565;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;">Service Areas</div>
+    <h1 style="font-family:'Playfair Display',serif;font-size:52px;color:#3D1565;font-weight:700;margin-bottom:18px;line-height:1.15;">Our Locations</h1>
+    <p style="font-size:19px;color:#5A3A8A;max-width:620px;line-height:1.75;font-weight:300;">Serene Hospice LLC is based in Tarzana, CA and proudly serves patients throughout the greater Los Angeles area — wherever they call home.</p>
   </div>
-  <div style="position:absolute;bottom:-1px;left:0;right:0;pointer-events:none;"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:60px;" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="white"></path></svg></div>
-</section>
-
-<!-- TEAM PHOTO -->
-<!-- TEAM INTRO -->
-<section style="padding:70px 40px 50px;background:white;">
-  <div style="max-width:800px;margin:0 auto;text-align:center;">
-    <p style="font-size:17px;line-height:1.9;color:#5A4A7A;">Our hospice team follows a personalized plan of physical, emotional, and spiritual care under the supervision of the patient's physician and our hospice medical director. The patient's plan of care is continuously renewed and adapted to meet the patient's changing needs.</p>
+  <div style="position:absolute;bottom:-1px;left:0;right:0;pointer-events:none;">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:60px;" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="white"></path></svg>
   </div>
 </section>
 
-<!-- TEAM CARDS -->
-<section style="padding:20px 40px 80px;background:white;">
-  <div class="sh-grid-3" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;">
-    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
-      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">👨‍⚕️</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Physician</h3>
-      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">The hospice physician works in close conjunction with the patient's own physician to provide expert pain and symptom management, ensuring comfort is always the top priority.</p>
+<!-- OFFICE + MAP -->
+<section style="padding:80px 40px;background:white;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;" class="loc-grid">
+
+      <!-- Office Card -->
+      <div style="background:#F7F3FC;border-radius:24px;padding:40px 36px;border:1.5px solid #E0D0F0;">
+        <div style="display:inline-block;background:#EAD8F5;color:#7A5ABE;padding:7px 16px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;">Main Office</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:26px;color:#3D1565;font-weight:700;margin-bottom:20px;">Tarzana, CA</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:36px;height:36px;border-radius:50%;background:white;border:1.5px solid #E0D0F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">📍</div>
+            <div style="color:#3D1565;line-height:1.6;font-size:15px;">6047 Tampa Ave, Ste 204<br>Tarzana, CA 91356</div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;">
+            <div style="width:36px;height:36px;border-radius:50%;background:white;border:1.5px solid #E0D0F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">📞</div>
+            <a href="tel:9493374833" style="color:#7A5ABE;font-weight:700;font-size:15px;">949-337-4833</a>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;">
+            <div style="width:36px;height:36px;border-radius:50%;background:white;border:1.5px solid #E0D0F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">📠</div>
+            <span style="color:#3D1565;font-size:15px;">Fax: 949-353-5481</span>
+          </div>
+          <div style="display:flex;gap:14px;align-items:center;">
+            <div style="width:36px;height:36px;border-radius:50%;background:white;border:1.5px solid #E0D0F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">✉️</div>
+            <a href="mailto:info@serene-hospice.com" style="color:#7A5ABE;font-size:14px;word-break:break-all;">info@serene-hospice.com</a>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <div style="width:36px;height:36px;border-radius:50%;background:white;border:1.5px solid #E0D0F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">🕐</div>
+            <div style="color:#3D1565;line-height:1.65;font-size:14px;"><strong>Office Hours:</strong> Mon–Fri, 10:00 am – 4:00 pm<br><strong>On-Call:</strong> Available 24/7</div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=6047+Tampa+Ave+Ste+204+Tarzana+CA+91356" target="_blank" style="display:block;text-align:center;margin-top:24px;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:13px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 4px 16px rgba(149,117,205,0.28);">Get Directions →</a>
+      </div>
+
+      <!-- Map Embed -->
+      <div style="border-radius:24px;overflow:hidden;box-shadow:0 12px 40px rgba(149,117,205,0.14);height:480px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.3!2d-118.5510!3d34.1680!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2996b57ebb5e1%3A0x1234567890abcdef!2s6047%20Tampa%20Ave%2C%20Tarzana%2C%20CA%2091356!5e0!3m2!1sen!2sus!4v1"
+          width="100%" height="100%" style="border:0;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
     </div>
-    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
-      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🩺</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">RN Case Managers</h3>
-      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our registered nurse case managers coordinate all aspects of care, making regular home visits to monitor the patient, teach caregivers, and provide skilled clinical care with compassion.</p>
+  </div>
+</section>
+
+<!-- SERVICE AREAS -->
+<section style="padding:0 40px 80px;background:white;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="background:#F7F3FC;border-radius:28px;padding:52px 48px;">
+      <div style="text-align:center;margin-bottom:40px;">
+        <div style="display:inline-block;background:#EAD8F5;color:#7A5ABE;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Where We Serve</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:34px;color:#3D1565;font-weight:700;margin-bottom:12px;">Service Areas Across Los Angeles</h2>
+        <p style="font-size:15px;color:#6A5A8A;max-width:520px;margin:0 auto;line-height:1.7;">We provide care to patients throughout the greater LA area, coming directly to wherever they call home.</p>
+      </div>
+      <div class="area-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        <div class="area-chip">Tarzana</div>
+        <div class="area-chip">Encino</div>
+        <div class="area-chip">Woodland Hills</div>
+        <div class="area-chip">Reseda</div>
+        <div class="area-chip">Northridge</div>
+        <div class="area-chip">West Hills</div>
+        <div class="area-chip">Canoga Park</div>
+        <div class="area-chip">Chatsworth</div>
+        <div class="area-chip">Granada Hills</div>
+        <div class="area-chip">Sherman Oaks</div>
+        <div class="area-chip">Studio City</div>
+        <div class="area-chip">Van Nuys</div>
+        <div class="area-chip">Panorama City</div>
+        <div class="area-chip">North Hollywood</div>
+        <div class="area-chip">Burbank</div>
+        <div class="area-chip">Glendale</div>
+        <div class="area-chip">Pasadena</div>
+        <div class="area-chip">Calabasas</div>
+        <div class="area-chip">Thousand Oaks</div>
+        <div class="area-chip">West LA</div>
+      </div>
+      <p style="text-align:center;margin-top:24px;font-size:14px;color:#8A7AAA;">Don't see your city? Call us — we likely serve your area too.</p>
     </div>
-    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
-      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🤝</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Social Workers</h3>
-      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our licensed social workers help families understand and cope with the emotional and financial challenges of this journey, providing guidance, counseling, and practical resources.</p>
+  </div>
+</section>
+
+<!-- WHERE WE PROVIDE CARE -->
+<section style="padding:0 40px 80px;background:white;">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:44px;">
+      <div style="display:inline-block;background:#EAD8F5;color:#7A5ABE;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Care Settings</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:34px;color:#3D1565;font-weight:700;">We Come To You</h2>
+      <p style="font-size:15px;color:#6A5A8A;max-width:500px;margin:14px auto 0;line-height:1.7;">Hospice care is delivered wherever the patient is most comfortable.</p>
     </div>
-    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
-      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🙏</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Chaplains</h3>
-      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our interfaith chaplains are always on hand to offer spiritual support, comfort, and peace to patients and their families, honoring every faith tradition with sensitivity and respect.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;" class="area-grid">
+      <div style="background:#F5F0FB;border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:32px;">🏠</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:17px;color:#3D1565;font-weight:700;">Private Residence</h3>
+        <p style="font-size:13px;color:#6A5A8A;line-height:1.65;">Care delivered in the comfort of the patient's own home, maintaining familiar surroundings and routines.</p>
+      </div>
+      <div style="background:#F5F0FB;border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:32px;">🏢</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:17px;color:#3D1565;font-weight:700;">Assisted Living</h3>
+        <p style="font-size:13px;color:#6A5A8A;line-height:1.65;">We coordinate with assisted living facility staff to provide seamless hospice care alongside existing services.</p>
+      </div>
+      <div style="background:#F5F0FB;border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:32px;">🏥</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:17px;color:#3D1565;font-weight:700;">Skilled Nursing Facility</h3>
+        <p style="font-size:13px;color:#6A5A8A;line-height:1.65;">Partnering with SNF staff to layer hospice comfort care over existing clinical care.</p>
+      </div>
+      <div style="background:#F5F0FB;border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:32px;">🌳</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:17px;color:#3D1565;font-weight:700;">Retirement Community</h3>
+        <p style="font-size:13px;color:#6A5A8A;line-height:1.65;">Providing dignified care within the patient's retirement community, surrounded by neighbors and friends.</p>
+      </div>
+      <div style="background:#F5F0FB;border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:32px;">🏡</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:17px;color:#3D1565;font-weight:700;">Board &amp; Care Home</h3>
+        <p style="font-size:13px;color:#6A5A8A;line-height:1.65;">Working with board and care providers to ensure residents receive comprehensive hospice support.</p>
+      </div>
+      <div style="background:#F5F0FB;border-radius:20px;padding:28px 24px;display:flex;flex-direction:column;gap:12px;">
+        <div style="font-size:32px;">💛</div>
+        <h3 style="font-family:'Playfair Display',serif;font-size:17px;color:#3D1565;font-weight:700;">Wherever You Are</h3>
+        <p style="font-size:13px;color:#6A5A8A;line-height:1.65;">If it's where the patient lives, we can provide care there. Call us to discuss your specific situation.</p>
+      </div>
     </div>
-    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
-      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🌟</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Volunteers</h3>
-      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our trained volunteers provide companionship, personal care, and temporary relief for caregivers, offering their time and heart to make each patient's days a little brighter.</p>
-    </div>
-    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px">
-      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">🧼</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Home Health Aides</h3>
-      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Our certified home health aides provide hands-on personal care and conduct regular visits to assist with activities of daily living, ensuring patient comfort and dignity at home.</p>
-    </div>
-    <div style="background: #F5F0FB; border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; grid-column: span 1; margin: 5px">
-      <div style="width:60px;height:60px;border-radius:18px;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:26px;">📞</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Nursing On-Call Services</h3>
-      <p style="font-size:14px;color:#5A4A7A;line-height:1.75;">Available 24/7 to answer caregiver questions and provide guidance. Continuous Care is available during medical crises; Respite Care provides temporary relief to caregivers when needed.</p>
-    </div>
-    <div style="background: linear-gradient(135deg,#9575CD,#B8A0E0); border-radius: 22px; padding: 36px 30px; display: flex; flex-direction: column; gap: 14px; margin: 5px; grid-column: span 2">
-      <div style="width:60px;height:60px;border-radius:18px;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:26px;">🏥</div>
-      <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:white;font-weight:700;">Hospice In-Patient Care</h3>
-      <p style="font-size:14px;color:rgba(255,255,255,.9);line-height:1.75;">For patients requiring short-term acute symptom management or pain control that cannot be managed at home, our team coordinates inpatient care at skilled nursing facilities, with continuous monitoring and support for the family throughout.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:70px 40px;background:linear-gradient(135deg,#9575CD,#B8A0E0);">
+  <div style="max-width:700px;margin:0 auto;text-align:center;color:white;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:34px;font-weight:700;margin-bottom:14px;">Serving Your Family, Wherever You Are</h2>
+    <p style="font-size:16px;line-height:1.75;color:rgba(255,255,255,.88);margin-bottom:28px;">Contact us today to confirm service in your area and begin the enrollment process.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" style="background:white;color:#8565BE;padding:15px 36px;border-radius:50px;font-weight:700;font-size:15px;box-shadow:0 4px 16px rgba(0,0,0,.15);">Contact Us</a>
+      <a href="tel:9493374833" style="background:rgba(255,255,255,.18);color:white;border:2px solid rgba(255,255,255,.45);padding:15px 36px;border-radius:50px;font-weight:700;font-size:15px;">📞 949-337-4833</a>
     </div>
   </div>
 </section>
@@ -286,7 +257,7 @@ img{max-width:100%!important;}
 <!-- FOOTER -->
 <footer style="background:linear-gradient(135deg,#7B55A8,#A98BD0);color:white;padding:70px 40px 32px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <div class="sh-footer-grid" style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:52px;align-items:start;">
+    <div class="sh-footer-grid" style="margin-bottom:52px;align-items:start;">
       <div>
         <img src="uploads/logo.png" alt="Serene Hospice LLC" style="height:80px;margin-bottom:18px;display:block;border-radius:12px;padding:8px;background:rgba(255,255,255,0.15);">
         <p style="font-size:13px;line-height:1.8;color:rgba(255,255,255,.72);max-width:260px;">Compassionate, patient-centered end-of-life care throughout the greater Los Angeles area.</p>
@@ -317,7 +288,7 @@ img{max-width:100%!important;}
       <div>
         <h4 style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:20px;color:rgba(255,255,255,.55);">Hours</h4>
         <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(255,255,255,.85);">
-          <div><span style="color:rgba(255,255,255,.6);font-size:12px;text-transform:uppercase;letter-spacing:.8px;">Office</span><br>Mon-Fri: 10:00 am - 4:00 pm</div>
+          <div><span style="color:rgba(255,255,255,.6);font-size:12px;text-transform:uppercase;letter-spacing:.8px;">Office</span><br>Mon–Fri: 10:00 am – 4:00 pm</div>
           <div><span style="color:rgba(255,255,255,.6);font-size:12px;text-transform:uppercase;letter-spacing:.8px;">Answering Service</span><br>Available 24 hours a day, 7 days a week</div>
         </div>
       </div>

@@ -3,129 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* MOBILE NAV */
-.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;margin-left:auto;flex-shrink:0;}
-.mobile-menu-btn span{display:block;width:24px;height:2px;background:#8565BE;border-radius:2px;}
-.mobile-nav{display:none;position:fixed;top:74px;left:0;right:0;background:rgba(255,255,255,.99);padding:20px 24px;flex-direction:column;z-index:9999;box-shadow:0 8px 24px rgba(149,117,205,.18);}
-.mobile-nav.open{display:flex;}
-.mobile-nav a{color:#8565BE!important;font-size:15px;font-weight:700;padding:14px 0;border-bottom:1px solid #EDE0F8!important;display:block;}
-.mobile-nav a:last-child{background:linear-gradient(135deg,#9575CD,#B8A0E0)!important;color:white!important;padding:14px 20px;border-radius:50px;text-align:center;margin-top:12px;border-bottom:none!important;}
-/* OVERFLOW */
-html,body{overflow-x:hidden!important;}
-*{box-sizing:border-box;}
-img{max-width:100%!important;}
-/* TABLET 900px */
-@media(max-width:900px){
-  .mobile-menu-btn{display:flex!important;}
-  header nav,.header-cta{display:none!important;}
-  section,footer{padding-left:20px!important;padding-right:20px!important;}
-  .sh-grid-3,.sh-grid-4{grid-template-columns:1fr 1fr!important;gap:16px!important;}
-  .sh-footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}
-  .sh-flex-row,.flex-col-mobile,.hero-flex{flex-direction:column!important;gap:24px!important;}
-  .sh-fixed-col,.hero-card,.full-width-mobile{flex:none!important;width:100%!important;max-width:100%!important;}
-  div[style*="flex:0 0"]{flex:none!important;width:100%!important;max-width:100%!important;}
-}
-/* MOBILE 600px */
-@media(max-width:600px){
-  .sh-grid-2,.sh-grid-3,.sh-grid-4,.sh-footer-grid{grid-template-columns:1fr!important;gap:14px!important;}
-  .sh-flex-row,.flex-col-mobile,.hero-flex{flex-direction:column!important;gap:16px!important;}
-  .sh-fixed-col,.hero-card,.full-width-mobile{flex:none!important;width:100%!important;}
-  div[style*="flex:0 0"]{flex:none!important;width:100%!important;max-width:100%!important;}
-  h1{font-size:28px!important;line-height:1.2!important;}
-  h2{font-size:22px!important;}
-  h3{font-size:17px!important;}
-  section{padding-top:40px!important;padding-bottom:40px!important;}
-  footer{padding-top:36px!important;padding-bottom:20px!important;}
-  div[style*="width:1px;background"]{display:none!important;}
-}
-</style>
-<script>
-(function(){
-  function bindNav(){
-    var btn=document.querySelector('.mobile-menu-btn');
-    var nav=document.getElementById('mobileNav');
-    if(!btn||!nav) return false;
-    btn.removeEventListener('click',btn._sh_click||function(){});
-    btn._sh_click=function(e){e.stopPropagation();nav.classList.toggle('open');};
-    btn.addEventListener('click',btn._sh_click);
-    nav.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click',function(){nav.classList.remove('open');});
-    });
-    document.addEventListener('click',function(e){
-      if(!nav.contains(e.target)&&!btn.contains(e.target)) nav.classList.remove('open');
-    });
-    return true;
-  }
-  // Try immediately
-  if(!bindNav()){
-    // Watch for React to mount the elements
-    var obs=new MutationObserver(function(){
-      if(bindNav()) obs.disconnect();
-    });
-    obs.observe(document.body||document.documentElement,{childList:true,subtree:true});
-    // Safety fallback after 5s
-    setTimeout(function(){obs.disconnect();bindNav();},5000);
-  }
-})();
-</script>
-<title>Serene Hospice LLC – Compassionate Care. Peaceful Moments.</title>
-  <script src="animations.js"></script>
-  <link rel="stylesheet" href="responsive.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Lato:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+
+
+<title>FAQ – Serene Hospice LLC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
     body{font-family:'Lato',sans-serif;color:#3D1565;background:#fff;overflow-x:hidden;}
     a{text-decoration:none;}
-    /* ── MOBILE NAV ── */
     .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;margin-left:auto;flex-shrink:0;}
     .mobile-menu-btn span{display:block;width:24px;height:2px;background:#8565BE;border-radius:2px;}
-    .mobile-nav{display:none;position:fixed;top:74px;left:0;right:0;background:rgba(255,255,255,.99);backdrop-filter:blur(8px);padding:20px 24px;flex-direction:column;gap:0;z-index:999;box-shadow:0 8px 24px rgba(149,117,205,.18);}
+    .mobile-nav{display:none;position:fixed;top:74px;left:0;right:0;background:rgba(255,255,255,.99);backdrop-filter:blur(8px);padding:20px 24px;flex-direction:column;gap:0;z-index:9999;box-shadow:0 8px 24px rgba(149,117,205,.18);}
     .mobile-nav.open{display:flex;}
-    .mobile-nav a{color:#8565BE!important;font-size:15px;font-weight:700;padding:14px 0;border-bottom:1px solid #EDE0F8!important;display:block;text-decoration:none;}
+    .mobile-nav a{color:#8565BE!important;font-size:15px;font-weight:700;padding:14px 0;border-bottom:1px solid #EDE0F8!important;display:block;}
     .mobile-nav a:last-child{background:linear-gradient(135deg,#9575CD,#B8A0E0)!important;color:white!important;padding:14px 20px;border-radius:50px;text-align:center;margin-top:12px;border-bottom:none!important;}
-    /* ── OVERFLOW PREVENTION ── */
     html,body{overflow-x:hidden!important;}
-    *{box-sizing:border-box;}
-    img{max-width:100%;}
-    /* ── TABLET ── */
     @media(max-width:900px){
       .mobile-menu-btn{display:flex!important;}
       header nav,.header-cta{display:none!important;}
       section,footer{padding-left:20px!important;padding-right:20px!important;}
-      .sh-grid-3,.sh-grid-4{grid-template-columns:1fr 1fr!important;gap:16px!important;}
-      .sh-footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}
-      .sh-flex-row,.flex-col-mobile{flex-direction:column!important;gap:24px!important;}
-      .sh-fixed-col,.full-width-mobile{flex:none!important;width:100%!important;max-width:100%!important;}
-      .hero-flex{flex-direction:column!important;gap:28px!important;}
-      .hero-card{flex:none!important;width:100%!important;}
-      h1{font-size:32px!important;line-height:1.2!important;}
-      h2{font-size:24px!important;}
-      .intro-grid{grid-template-columns:1fr!important;gap:28px!important;}
     }
-    /* ── MOBILE ── */
     @media(max-width:600px){
-      .sh-grid-2,.sh-grid-3,.sh-grid-4,.sh-footer-grid{grid-template-columns:1fr!important;gap:14px!important;}
-      .sh-flex-row,.flex-col-mobile{flex-direction:column!important;gap:16px!important;}
-      .sh-fixed-col,.full-width-mobile{flex:none!important;width:100%!important;}
-      div[style*="width:1px;background"]{display:none!important;}
       section{padding-top:40px!important;padding-bottom:40px!important;}
       footer{padding-top:36px!important;padding-bottom:20px!important;}
       h1{font-size:28px!important;}
       h2{font-size:20px!important;}
-      h3{font-size:16px!important;}
     }
-    .mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;}
-    .mobile-menu-btn span{display:block;width:24px;height:2px;background:#8565BE;border-radius:2px;transition:all .3s;}
-    .mobile-nav{display:none;position:fixed;top:74px;left:0;right:0;background:rgba(255,255,255,0.98);backdrop-filter:blur(8px);padding:20px 24px;flex-direction:column;gap:16px;z-index:999;box-shadow:0 8px 24px rgba(149,117,205,0.15);}
-    .mobile-nav.open{display:flex;}
-    .mobile-nav a{color:#8565BE;font-size:15px;font-weight:700;letter-spacing:.5px;padding:10px 0;border-bottom:1px solid #EDE0F8;}
-    @media(max-width:900px){
-      .mobile-menu-btn{display:flex;}
-      header nav,.header-cta{display:none!important;}
-    }
+    .faq-item{border-bottom:1px solid #EDE0F8;}
+    .faq-btn{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+    .faq-btn:hover .faq-q{color:#7A5ABE;}
+    .faq-q{font-family:'Playfair Display',serif;font-size:18px;color:#3D1565;font-weight:600;line-height:1.4;}
+    .faq-icon{width:28px;height:28px;border-radius:50%;background:#EDE0F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:#7A5ABE;font-weight:700;transition:transform .3s;}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .faq-body.open{max-height:600px;}
+    .faq-body-inner{padding:0 0 20px;font-size:15px;color:#5A4A7A;line-height:1.8;}
+    .sh-footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;}
+    @media(max-width:900px){.sh-footer-grid{grid-template-columns:1fr 1fr!important;gap:24px!important;}}
+    @media(max-width:600px){.sh-footer-grid{grid-template-columns:1fr!important;}}
   </style>
+  <script>
+    function toggleFaq(btn){
+      var body=btn.nextElementSibling;
+      var icon=btn.querySelector('.faq-icon');
+      var isOpen=body.classList.contains('open');
+      document.querySelectorAll('.faq-body.open').forEach(function(b){
+        b.classList.remove('open');
+        b.previousElementSibling.querySelector('.faq-icon').style.transform='rotate(0deg)';
+      });
+      if(!isOpen){body.classList.add('open');icon.style.transform='rotate(45deg)';}
+    }
+  </script>
 <style>
 .svc-dd{position:fixed;top:74px;left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid #E8D8F5;border-radius:18px;box-shadow:0 16px 48px rgba(149,117,205,0.2);padding:28px 28px 18px;z-index:9999;width:700px;pointer-events:none;opacity:0;transition:opacity .2s ease,transform .2s ease;}
 .nav-svc-wrap:hover .svc-dd{pointer-events:auto;opacity:1;transform:translateX(-50%) translateY(0);}
@@ -138,71 +65,37 @@ img{max-width:100%!important;}
 <body>
 <!-- NAV -->
 <header style="position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(8px);box-shadow:0 2px 18px rgba(149,117,205,0.09);height:74px;display:flex;align-items:center;padding:0 24px;gap:16px;">
-  <a href="index.html" style="flex-shrink:0;display:flex;align-items:center;">
-    <img src="uploads/logo.png" alt="Serene Hospice LLC" style="height:52px;width:auto;">
-  </a>
-  <nav style="flex:1;display:flex;justify-content:center;align-items:center;gap:24px;">
-    <a href="about.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">About</a>
-    <div style="position:relative;display:inline-flex;align-items:center;" class="nav-svc-wrap">
-  <a href="services.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;display:inline-flex;align-items:center;gap:5px;">Services <svg class="svc-arrow" width="13" height="8" viewBox="0 0 9 5" fill="none" style="margin-top:2px;transition:transform .2s ease;flex-shrink:0;"><path d="M1 1l3.5 3L8 1" stroke="#8565BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  <a href="index.html" style="flex-shrink:0;"><img src="uploads/logo.png" alt="Serene Hospice LLC" style="height:52px;width:auto;"></a>
+  <nav style="flex:1;display:flex;justify-content:center;align-items:center;gap:20px;">
+    <a href="about.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">About</a>
+<div style="position:relative;display:inline-flex;align-items:center;" class="nav-svc-wrap">
+  <a href="services.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;display:inline-flex;align-items:center;gap:5px;">Services <svg class="svc-arrow" width="13" height="8" viewBox="0 0 9 5" fill="none" style="margin-top:2px;transition:transform .2s ease;flex-shrink:0;"><path d="M1 1l3.5 3L8 1" stroke="#8565BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   <div class="svc-dd">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 28px;">
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Clinical</div>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <a href="service-medical-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">👨‍⚕️ Medical Care</a>
-          <a href="service-skilled-nursing.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🩺 Skilled Nursing</a>
-          <a href="service-therapy.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🏃 Therapy Evaluations</a>
-          <a href="service-medications.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">💊 Medications &amp; Supplies</a>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Personal Care</div>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <a href="service-home-health-aide.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🧼 Home Health Aide</a>
-          <a href="service-personal-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🍽️ Personal Care Asst.</a>
-          <a href="service-nutrition.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🥗 Nutritional Counseling</a>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Support</div>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <a href="service-social-worker.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🤝 Social Worker</a>
-          <a href="service-spiritual-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🙏 Spiritual Counseling</a>
-          <a href="service-bereavement.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">💛 Bereavement &amp; Grief</a>
-          <a href="service-caregiver-training.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">👨‍👩‍👧 Caregiver Training</a>
-          <a href="service-volunteer.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🌟 Volunteer Support</a>
-        </div>
-      </div>
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Crisis Care</div>
-        <div style="display:flex;flex-direction:column;gap:1px;">
-          <a href="service-crisis-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🚨 24-Hour Crisis Care</a>
-          <a href="service-inpatient-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🏨 Short-Term Inpatient</a>
-        </div>
-      </div>
+      <div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Clinical</div><div style="display:flex;flex-direction:column;gap:1px;"><a href="service-medical-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">👨‍⚕️ Medical Care</a><a href="service-skilled-nursing.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🩺 Skilled Nursing</a><a href="service-therapy.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🏃 Therapy Evaluations</a><a href="service-medications.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">💊 Medications &amp; Supplies</a></div></div>
+      <div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Personal Care</div><div style="display:flex;flex-direction:column;gap:1px;"><a href="service-home-health-aide.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🧼 Home Health Aide</a><a href="service-personal-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🍽️ Personal Care Asst.</a><a href="service-nutrition.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🥗 Nutritional Counseling</a></div></div>
+      <div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Support</div><div style="display:flex;flex-direction:column;gap:1px;"><a href="service-social-worker.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🤝 Social Worker</a><a href="service-spiritual-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🙏 Spiritual Counseling</a><a href="service-bereavement.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">💛 Bereavement &amp; Grief</a><a href="service-caregiver-training.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">👨‍👩‍👧 Caregiver Training</a><a href="service-volunteer.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🌟 Volunteer Support</a></div></div>
+      <div><div style="font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#9575CD;margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid #EDE0F8;">Crisis Care</div><div style="display:flex;flex-direction:column;gap:1px;"><a href="service-crisis-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🚨 24-Hour Crisis Care</a><a href="service-inpatient-care.html" style="color:#3D1565;font-size:13px;padding:6px 8px;border-radius:8px;display:block;">🏨 Short-Term Inpatient</a></div></div>
     </div>
-    <a href="services.html" style="display:block;text-align:center;margin-top:14px;padding-top:12px;border-top:1px solid #EDE0F8;font-size:12px;font-weight:700;color:#8565BE;letter-spacing:.5px;">View All Services →</a>
+    <a href="services.html" style="display:block;text-align:center;margin-top:14px;padding-top:12px;border-top:1px solid #EDE0F8;font-size:12px;font-weight:700;color:#8565BE;">View All Services →</a>
   </div>
 </div>
-    <a href="eligibility.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Eligibility</a>
-    <a href="insurance.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Insurance</a>
-    <a href="our-team.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Our Team</a>
-    <a href="locations.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Locations</a>
-    <a href="faq.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">FAQ</a>
-    <a href="contact.html" style="color:#8565BE;font-size:13px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Contact</a>
+    <a href="eligibility.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Eligibility</a>
+    <a href="insurance.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Insurance</a>
+    <a href="our-team.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Our Team</a>
+    <a href="locations.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Locations</a>
+    <a href="faq.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid #A98BD0;">FAQ</a>
+    <a href="contact.html" style="color:#8565BE;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:4px 0;border-bottom:2px solid transparent;">Contact</a>
   </nav>
-  <a href="tel:9493374833" class="header-cta" style="flex-shrink:0;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:11px 24px;border-radius:50px;font-weight:700;font-size:14px;white-space:nowrap;box-shadow:0 4px 14px rgba(149,117,205,0.25);display:flex;align-items:center;gap:8px;">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"></path></svg>
+  <a href="tel:9493374833" class="header-cta" style="flex-shrink:0;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:11px 22px;border-radius:50px;font-weight:700;font-size:13px;white-space:nowrap;box-shadow:0 4px 14px rgba(149,117,205,0.25);display:flex;align-items:center;gap:7px;">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"></path></svg>
     949-337-4833
   </a>
-  <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')" aria-label="Menu">
+  <button class="mobile-menu-btn" onclick="document.getElementById('mobileNavFaq').classList.toggle('open')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </header>
-
-<!-- MOBILE NAV -->
-<div id="mobileNav" class="mobile-nav">
+<div id="mobileNavFaq" class="mobile-nav">
   <a href="about.html">About</a>
   <a href="services.html" style="font-weight:900!important;">Services</a>
   <a href="service-medical-care.html" style="padding-left:20px!important;font-size:13px!important;color:#5A3A8A!important;">👨‍⚕️ Medical Care</a>
@@ -225,226 +118,201 @@ img{max-width:100%!important;}
   <a href="locations.html">Locations</a>
   <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
-  <a href="tel:9493374833" style="background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white!important;padding:14px 20px;border-radius:50px;text-align:center;margin-top:4px;border-bottom:none!important;">📞 949-337-4833</a>
+  <a href="tel:9493374833">📞 949-337-4833</a>
 </div>
 
 <!-- HERO -->
-<section style="min-height:100vh;position:relative;display:flex;align-items:center;padding-top:100px;padding-bottom:80px;padding-left:7%;padding-right:7%;overflow:hidden;width:100%;">
-  <!-- Photo background -->
-  <div style="position:absolute;inset:0;background-image:url('uploads/hero-banner.png');background-size:cover;background-position:center 30%;z-index:0;"></div>
-  <!-- Deep purple overlay matching brand -->
-  <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(45,12,80,0.88) 0%,rgba(70,30,115,0.78) 45%,rgba(45,12,80,0.60) 100%);z-index:1;"></div>
-
-  <div style="position:relative;z-index:2;max-width:760px;width:100%;margin:0 auto 0 0;">
-    <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.92);padding:7px 18px;border-radius:50px;font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:30px;">
-      ★ Joint Commission National Quality Approval
-    </div>
-    <h1 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5.5vw,72px);line-height:1.08;font-weight:700;margin-bottom:24px;color:#fff;">
-      Compassionate Care.<br><em style="color:#D4B8F0;font-style:italic;">Peaceful Moments.</em>
-    </h1>
-    <p style="font-size:clamp(16px,1.4vw,20px);line-height:1.8;color:rgba(255,255,255,0.82);margin-bottom:40px;font-weight:300;max-width:580px;">Serene Hospice LLC provides personalized, dignified end-of-life care, supporting patients, families, and loved ones throughout the greater Los Angeles area.</p>
-    <div style="display:flex;gap:16px;flex-wrap:wrap;">
-      <a href="contact.html" style="background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:17px 44px;border-radius:50px;font-weight:700;font-size:16px;box-shadow:0 6px 24px rgba(0,0,0,0.3);">Get in Touch</a>
-      <a href="services.html" style="background:rgba(255,255,255,0.12);color:white;border:2px solid rgba(255,255,255,0.45);padding:17px 44px;border-radius:50px;font-weight:700;font-size:16px;">Our Services</a>
-    </div>
-    <div style="margin-top:52px;display:flex;gap:44px;flex-wrap:wrap;">
-      <div>
-        <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;">24/7</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;">On-Call Service</div>
-      </div>
-      <div style="width:1px;background:rgba(255,255,255,0.2);"></div>
-      <div>
-        <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;">18+</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;">Care Services</div>
-      </div>
-      <div style="width:1px;background:rgba(255,255,255,0.2);"></div>
-      <div>
-        <div style="font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:#fff;">$0</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.7);margin-top:4px;">No Cost Barrier</div>
-      </div>
-    </div>
-  </div>
-  <div style="position:absolute;bottom:-1px;left:0;right:0;pointer-events:none;z-index:3;">
-    <svg viewBox="0 0 1440 70" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:70px;" preserveAspectRatio="none">
-      <path d="M0,40 C360,70 720,10 1080,40 C1260,55 1380,30 1440,40 L1440,70 L0,70 Z" fill="white"></path>
-    </svg>
-  </div>
-</section>
-
-<!-- PHOTO + INTRO STRIP -->
-<section style="padding:80px 40px;background:white;overflow:hidden;">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:420px 1fr;gap:52px;align-items:center;" class="intro-grid">
-    <div style="border-radius:24px;overflow:hidden;box-shadow:0 12px 40px rgba(149,117,205,0.14);">
-      <img src="uploads/pasted-1782315222575-0.png" alt="Nurse caring for elderly patient" style="width:100%;height:360px;object-fit:cover;display:block;">
-    </div>
-    <div style="min-width:0;">
-      <div style="display:inline-block;background:#EAD8F5;color:#7A5ABE;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;">About Serene Hospice</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:38px;color:#3D1565;font-weight:700;margin-bottom:20px;line-height:1.2;">Care That Puts People First</h2>
-      <p style="font-size:16px;line-height:1.85;color:#5A4A7A;margin-bottom:16px;">Serene Hospice LLC is dedicated to providing compassionate, patient-centered care that honors the dignity of every individual. Our team works alongside physicians, families, and loved ones to ensure every patient experiences comfort and peace.</p>
-      <p style="font-size:16px;line-height:1.85;color:#5A4A7A;margin-bottom:28px;">We are proud to hold the Joint Commission National Quality Approval, reflecting our commitment to the highest standards of hospice care across the greater Los Angeles area.</p>
-      <a href="about.html" style="display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:14px 32px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 6px 18px rgba(149,117,205,0.28);">Learn More About Us →</a>
-    </div>
-  </div>
-</section>
-
-<!-- QUICK NAV CARDS -->
-<section style="padding:20px 40px 80px;background:white;">
+<section style="padding:130px 40px 80px;background:linear-gradient(150deg,#D8C5EC 0%,#E8D8F5 50%,#F3ECF9 100%);position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-80px;right:-80px;width:380px;height:380px;border-radius:50%;background:rgba(255,255,255,0.3);pointer-events:none;"></div>
   <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:52px;">
-      <div style="display:inline-block;background:#EAD8F5;color:#7A5ABE;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">Everything You Need</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:40px;color:#3D1565;font-weight:700;">How We Can Help</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="grid-mobile">
-      <a href="about.html" style="background:#F5F0FB;border-radius:22px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;border:2px solid transparent;">
-        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#A98BD0,#C9AEE4);display:flex;align-items:center;justify-content:center;font-size:22px;">💜</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">About Hospice</h3>
-        <p style="font-size:14px;color:#6A5A8A;line-height:1.65;">Learn what hospice care means, our philosophy, and where care is provided.</p>
-        <span style="color:#8565BE;font-size:13px;font-weight:700;margin-top:auto;">Learn more →</span>
-      </a>
-      <a href="services.html" style="background:#F5F0FB;border-radius:22px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;border:2px solid transparent;">
-        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#A98BD0,#C9AEE4);display:flex;align-items:center;justify-content:center;font-size:22px;">🏥</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Our Services</h3>
-        <p style="font-size:14px;color:#6A5A8A;line-height:1.65;">From skilled nursing to spiritual counseling, a full continuum of compassionate care.</p>
-        <span style="color:#8565BE;font-size:13px;font-weight:700;margin-top:auto;">Learn more →</span>
-      </a>
-      <a href="eligibility.html" style="background:#F5F0FB;border-radius:22px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;border:2px solid transparent;">
-        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#A98BD0,#C9AEE4);display:flex;align-items:center;justify-content:center;font-size:22px;">📋</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Who Qualifies</h3>
-        <p style="font-size:14px;color:#6A5A8A;line-height:1.65;">Understand eligibility requirements and the diagnoses we care for every day.</p>
-        <span style="color:#8565BE;font-size:13px;font-weight:700;margin-top:auto;">Learn more →</span>
-      </a>
-      <a href="insurance.html" style="background:#F5F0FB;border-radius:22px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;border:2px solid transparent;">
-        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#A98BD0,#C9AEE4);display:flex;align-items:center;justify-content:center;font-size:22px;">💳</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Insurance &amp; Coverage</h3>
-        <p style="font-size:14px;color:#6A5A8A;line-height:1.65;">Medicare, Medi-Cal, HMO, and more. Care is never denied based on ability to pay.</p>
-        <span style="color:#8565BE;font-size:13px;font-weight:700;margin-top:auto;">Learn more →</span>
-      </a>
-      <a href="our-team.html" style="background:#F5F0FB;border-radius:22px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;border:2px solid transparent;">
-        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#A98BD0,#C9AEE4);display:flex;align-items:center;justify-content:center;font-size:22px;">🤝</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Our Team</h3>
-        <p style="font-size:14px;color:#6A5A8A;line-height:1.65;">Meet the dedicated physicians, nurses, social workers, and chaplains who care for you.</p>
-        <span style="color:#8565BE;font-size:13px;font-weight:700;margin-top:auto;">Learn more →</span>
-      </a>
-      <a href="contact.html" style="background:#F5F0FB;border-radius:22px;padding:36px 30px;display:flex;flex-direction:column;gap:14px;border:2px solid transparent;">
-        <div style="width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#A98BD0,#C9AEE4);display:flex;align-items:center;justify-content:center;font-size:22px;">📞</div>
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:#3D1565;font-weight:700;">Contact Us</h3>
-        <p style="font-size:14px;color:#6A5A8A;line-height:1.65;">We're available Monday through Friday and offer 24/7 answering service for urgent needs.</p>
-        <span style="color:#8565BE;font-size:13px;font-weight:700;margin-top:auto;">Get in touch →</span>
-      </a>
-    </div>
+    <div style="display:inline-block;background:rgba(255,255,255,0.35);color:#3D1565;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px;">Common Questions</div>
+    <h1 style="font-family:'Playfair Display',serif;font-size:52px;color:#3D1565;font-weight:700;margin-bottom:18px;line-height:1.15;">Frequently Asked Questions</h1>
+    <p style="font-size:19px;color:#5A3A8A;max-width:580px;line-height:1.75;font-weight:300;">We know this is a difficult time. Here are answers to the questions families ask most often about hospice care.</p>
+  </div>
+  <div style="position:absolute;bottom:-1px;left:0;right:0;pointer-events:none;">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:60px;" preserveAspectRatio="none"><path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="white"></path></svg>
   </div>
 </section>
 
-<!-- TWO PHOTOS STRIP -->
-<section style="padding:0 40px 80px;background:white;">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px;" class="grid-mobile">
-    <div style="border-radius:24px;overflow:hidden;box-shadow:0 8px 30px rgba(149,117,205,0.12);position:relative;">
-      <img src="uploads/pasted-1782315232935-0.png" alt="Family and patient together" style="width:100%;height:300px;object-fit:cover;display:block;">
-      <div style="position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(to top,rgba(61,21,101,0.75),transparent);">
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:white;font-weight:700;">Support for the Whole Family</h3>
-        <p style="font-size:13px;color:rgba(255,255,255,.88);margin-top:6px;">Emotional, spiritual, and practical support for patients and loved ones</p>
-      </div>
-    </div>
-    <div style="border-radius:24px;overflow:hidden;box-shadow:0 8px 30px rgba(149,117,205,0.12);position:relative;">
-      <img src="uploads/pasted-1782315244606-0.png" alt="Caregiver assisting patient" style="width:100%;height:300px;object-fit:cover;object-position:top;display:block;">
-      <div style="position:absolute;bottom:0;left:0;right:0;padding:24px;background:linear-gradient(to top,rgba(61,21,101,0.75),transparent);">
-        <h3 style="font-family:'Playfair Display',serif;font-size:20px;color:white;font-weight:700;">Care Where You Are</h3>
-        <p style="font-size:13px;color:rgba(255,255,255,.88);margin-top:6px;">In-home care, assisted living, long-term care, and retirement communities</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- FAQ BODY -->
+<section style="padding:80px 40px 100px;background:white;">
+  <div style="max-width:860px;margin:0 auto;">
 
-<!-- CONTACT SECTION -->
-<section style="padding:90px 40px;background:#F7F3FC;">
-  <div style="max-width:1200px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:56px;">
-      <div style="display:inline-block;background:#EAD8F5;color:#7A5ABE;padding:7px 18px;border-radius:50px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">We're Here For You</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:40px;color:#3D1565;font-weight:700;">Get in Touch</h2>
-      <p style="font-size:16px;color:#6A5A8A;margin-top:12px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;">Our compassionate team is ready to answer your questions and help you find the right care.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;" class="sh-flex-row">
-
-      <!-- Contact Card -->
-      <div style="background:white;border-radius:28px;padding:44px 38px;border:1px solid #E8D8F5;box-shadow:0 12px 40px rgba(149,117,205,0.10);">
-        <img src="uploads/logo.png" alt="Serene Hospice LLC" style="width:140px;margin:0 auto 18px;display:block;">
-        <div style="text-align:center;font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:#9575CD;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid #EDE0F8;">Compassionate Care. Peaceful Moments.</div>
-        <div style="display:flex;flex-direction:column;gap:16px;font-size:14px;">
-          <div style="display:flex;gap:14px;align-items:flex-start;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#EDE0F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">📍</div>
-            <div style="color:#3D1565;line-height:1.6;">6047 Tampa Ave, Ste 204<br>Tarzana, CA 91356</div>
-          </div>
-          <div style="display:flex;gap:14px;align-items:center;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#EDE0F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">📞</div>
-            <a href="tel:9493374833" style="color:#7A5ABE;font-weight:700;font-size:15px;">949-337-4833</a>
-          </div>
-          <div style="display:flex;gap:14px;align-items:center;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#EDE0F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">📠</div>
-            <span style="color:#3D1565;">Fax: 949-353-5481</span>
-          </div>
-          <div style="display:flex;gap:14px;align-items:center;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#EDE0F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">✉️</div>
-            <a href="mailto:info@serene-hospice.com" style="color:#7A5ABE;word-break:break-all;font-size:13px;">info@serene-hospice.com</a>
-          </div>
-          <div style="display:flex;gap:14px;align-items:flex-start;">
-            <div style="width:36px;height:36px;border-radius:50%;background:#EDE0F8;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;">🕐</div>
-            <div style="color:#3D1565;line-height:1.6;font-size:13px;"><strong>Office:</strong> Mon–Fri, 10am–4pm<br><strong>Answering:</strong> Available 24/7</div>
-          </div>
+    <!-- Category: Understanding Hospice -->
+    <div style="margin-bottom:52px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💜</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:#3D1565;font-weight:700;">Understanding Hospice Care</h2>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">What is hospice care?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Hospice care is a specialized form of medical care focused on comfort, dignity, and quality of life for individuals with a terminal illness. Rather than pursuing curative treatments, hospice focuses on relieving symptoms, managing pain, and providing emotional and spiritual support to patients and their families. Serene Hospice provides care wherever the patient calls home — private residences, nursing facilities, assisted living, or retirement communities.</div>
         </div>
-        <a href="contact.html" style="display:block;text-align:center;margin-top:26px;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:14px;border-radius:50px;font-weight:700;font-size:14px;box-shadow:0 4px 16px rgba(149,117,205,0.28);">View Full Contact Page</a>
       </div>
-
-      <!-- Contact Form -->
-      <div style="background:white;border-radius:28px;padding:44px 38px;border:1px solid #E8D8F5;box-shadow:0 12px 40px rgba(149,117,205,0.10);">
-        <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:#3D1565;font-weight:700;margin-bottom:8px;">Send Us a Message</h3>
-        <p style="font-size:14px;color:#8A7AAA;margin-bottom:28px;">We typically respond within one business day.</p>
-        <form onsubmit="event.preventDefault();this.innerHTML='<div style=\'text-align:center;padding:32px 0;\'><div style=\'font-size:40px;margin-bottom:12px;\'>✅</div><h3 style=\'font-family:Playfair Display,serif;color:#3D1565;margin-bottom:8px;\'>Message Received!</h3><p style=\'color:#6A5A8A;\'>Thank you for reaching out. A member of our team will be in touch shortly.</p></div>';">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;" class="sh-flex-row">
-            <div>
-              <label style="display:block;font-size:12px;font-weight:700;color:#7A5ABE;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px;">First Name</label>
-              <input type="text" required placeholder="Jane" style="width:100%;border:1.5px solid #E0D0F0;border-radius:12px;padding:12px 16px;font-size:14px;color:#3D1565;outline:none;font-family:Lato,sans-serif;">
-            </div>
-            <div>
-              <label style="display:block;font-size:12px;font-weight:700;color:#7A5ABE;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px;">Last Name</label>
-              <input type="text" required placeholder="Smith" style="width:100%;border:1.5px solid #E0D0F0;border-radius:12px;padding:12px 16px;font-size:14px;color:#3D1565;outline:none;font-family:Lato,sans-serif;">
-            </div>
-          </div>
-          <div style="margin-bottom:16px;">
-            <label style="display:block;font-size:12px;font-weight:700;color:#7A5ABE;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px;">Phone Number</label>
-            <input type="tel" placeholder="(949) 000-0000" style="width:100%;border:1.5px solid #E0D0F0;border-radius:12px;padding:12px 16px;font-size:14px;color:#3D1565;outline:none;font-family:Lato,sans-serif;">
-          </div>
-          <div style="margin-bottom:16px;">
-            <label style="display:block;font-size:12px;font-weight:700;color:#7A5ABE;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px;">Email Address</label>
-            <input type="email" required placeholder="jane@email.com" style="width:100%;border:1.5px solid #E0D0F0;border-radius:12px;padding:12px 16px;font-size:14px;color:#3D1565;outline:none;font-family:Lato,sans-serif;">
-          </div>
-          <div style="margin-bottom:16px;">
-            <label style="display:block;font-size:12px;font-weight:700;color:#7A5ABE;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px;">How Can We Help?</label>
-            <select style="width:100%;border:1.5px solid #E0D0F0;border-radius:12px;padding:12px 16px;font-size:14px;color:#3D1565;outline:none;font-family:Lato,sans-serif;background:white;">
-              <option value="">Select a topic…</option>
-              <option>General Inquiry</option>
-              <option>Enrollment / Admissions</option>
-              <option>Insurance &amp; Coverage</option>
-              <option>Services Information</option>
-              <option>Eligibility Question</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div style="margin-bottom:24px;">
-            <label style="display:block;font-size:12px;font-weight:700;color:#7A5ABE;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px;">Message</label>
-            <textarea rows="4" required placeholder="Tell us about your situation…" style="width:100%;border:1.5px solid #E0D0F0;border-radius:12px;padding:12px 16px;font-size:14px;color:#3D1565;outline:none;resize:vertical;font-family:Lato,sans-serif;"></textarea>
-          </div>
-          <button type="submit" style="width:100%;background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:16px;border-radius:50px;font-weight:700;font-size:15px;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(149,117,205,0.30);">Send Message →</button>
-        </form>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Does choosing hospice mean giving up?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Not at all. Hospice is a positive, life-affirming choice that focuses on comfort and quality of life rather than prolonging illness. Many families say hospice gave their loved one more peaceful, meaningful time than aggressive treatments would have. It is a shift in goals — not a surrender.</div>
+        </div>
       </div>
-
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">What is the difference between hospice and palliative care?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Palliative care is comfort-focused care that can be provided alongside curative treatment at any stage of illness. Hospice is a specific type of palliative care for patients who have been diagnosed with a terminal illness and have decided to stop pursuing curative treatment. Hospice is typically appropriate when a physician estimates a prognosis of six months or less if the illness runs its natural course.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Can hospice care be reversed or discontinued?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Yes. Patients and families can choose to leave hospice at any time — for example, if a patient's condition improves or they wish to pursue curative treatment again. There is no penalty for leaving or re-enrolling. Our team will support whatever decision is best for the patient and family.</div>
+        </div>
+      </div>
     </div>
+
+    <!-- Category: Eligibility & Enrollment -->
+    <div style="margin-bottom:52px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">📋</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:#3D1565;font-weight:700;">Eligibility &amp; Enrollment</h2>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Who is eligible for hospice care?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">A patient is eligible for hospice when a physician certifies a prognosis of six months or less if the illness runs its natural course, and the patient (or family) has chosen comfort-focused care over curative treatment. Hospice is available to patients of any age, diagnosis, religion, or race. Common diagnoses include cancer, heart disease, COPD, Alzheimer's, ALS, and kidney failure — among many others.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">How do I enroll in hospice?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Enrollment begins with a conversation — call us at 949-337-4833 or fill out our contact form. Our admissions team will coordinate with the patient's physician to verify eligibility and complete the certification paperwork. We work quickly to ensure care begins as soon as it's needed. Admissions are never denied based on ability to pay.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Can I still see my regular doctor while on hospice?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Yes. Patients may continue seeing their attending physician. Our hospice medical team works closely with the patient's existing doctors to ensure continuity of care and a coordinated, personalized care plan.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: Insurance & Cost -->
+    <div style="margin-bottom:52px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">💳</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:#3D1565;font-weight:700;">Insurance &amp; Cost</h2>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Is hospice covered by insurance?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Yes. Hospice is a Medicare-covered benefit under the Medicare Hospice Benefit, and is also covered by Medi-Cal, most HMOs, and many private insurance plans. Coverage typically includes all hospice-related medical care, medications, supplies, and equipment. Patients generally pay $0 out of pocket for covered hospice services.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">What if I don't have insurance?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Serene Hospice never denies care based on a patient's ability to pay. Our social work team can assist families in identifying financial assistance programs and resources. Please contact us to discuss your specific situation.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Are medications and medical equipment covered?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Yes. All hospice-related medications, medical equipment (such as hospital beds, wheelchairs, and oxygen), and medical supplies are provided and delivered to the patient's location at no cost under the hospice benefit.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category: Care & Support -->
+    <div style="margin-bottom:52px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:28px;">
+        <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#9575CD,#B8A0E0);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🤝</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;color:#3D1565;font-weight:700;">Care &amp; Support</h2>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Who makes up the hospice care team?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Our interdisciplinary care team includes the patient's attending physician, hospice medical director, registered nurses, licensed vocational nurses, certified home health aides, a social worker, a chaplain/spiritual counselor, a nutritional counselor, physical/occupational/speech therapy evaluators, bereavement counselors, and trained volunteers. Each team member plays a vital role in supporting the patient and family.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Where is hospice care provided?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Hospice care is provided wherever the patient lives. This includes private homes, apartments, assisted living facilities, board and care homes, skilled nursing facilities, and retirement communities throughout the greater Los Angeles area.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">What support does my family receive?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Hospice care is designed to support the entire family. Our social workers and chaplains provide emotional and spiritual support, our team trains family caregivers on how to safely care for their loved one, volunteers offer companionship and give family members a needed break, and our bereavement counselors provide grief support for up to 13 months after the patient's passing.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-q">Is someone available if there's an emergency at night?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Yes. Serene Hospice maintains a 24-hour, 7-day answering and on-call nursing service. If a crisis arises at any hour, a qualified nurse is available to respond, either by phone guidance or in person.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="background:linear-gradient(135deg,#F0E8FA,#E4D6F4);border-radius:24px;padding:48px 40px;text-align:center;">
+      <h3 style="font-family:'Playfair Display',serif;font-size:28px;color:#3D1565;font-weight:700;margin-bottom:12px;">Still Have Questions?</h3>
+      <p style="font-size:16px;color:#6A5A8A;margin-bottom:28px;line-height:1.7;">Our team is happy to talk through any concerns. Call us or send a message and we'll get back to you promptly.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="tel:9493374833" style="background:linear-gradient(135deg,#9575CD,#B8A0E0);color:white;padding:15px 36px;border-radius:50px;font-weight:700;font-size:15px;box-shadow:0 6px 18px rgba(149,117,205,0.28);">📞 Call 949-337-4833</a>
+        <a href="contact.html" style="background:white;color:#8565BE;border:2px solid #C9A8E8;padding:15px 36px;border-radius:50px;font-weight:700;font-size:15px;">Send a Message</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer style="background:linear-gradient(135deg,#7B55A8,#A98BD0);color:white;padding:70px 40px 32px;">
   <div style="max-width:1200px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:52px;align-items:start;" class="footer-grid-mobile">
+    <div class="sh-footer-grid" style="margin-bottom:52px;align-items:start;">
       <div>
         <img src="uploads/logo.png" alt="Serene Hospice LLC" style="height:80px;margin-bottom:18px;display:block;border-radius:12px;padding:8px;background:rgba(255,255,255,0.15);">
         <p style="font-size:13px;line-height:1.8;color:rgba(255,255,255,.72);max-width:260px;">Compassionate, patient-centered end-of-life care throughout the greater Los Angeles area.</p>
@@ -475,7 +343,7 @@ img{max-width:100%!important;}
       <div>
         <h4 style="font-size:11px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:20px;color:rgba(255,255,255,.55);">Hours</h4>
         <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(255,255,255,.85);">
-          <div><span style="color:rgba(255,255,255,.6);font-size:12px;text-transform:uppercase;letter-spacing:.8px;">Office</span><br>Mon-Fri: 10:00 am - 4:00 pm</div>
+          <div><span style="color:rgba(255,255,255,.6);font-size:12px;text-transform:uppercase;letter-spacing:.8px;">Office</span><br>Mon–Fri: 10:00 am – 4:00 pm</div>
           <div><span style="color:rgba(255,255,255,.6);font-size:12px;text-transform:uppercase;letter-spacing:.8px;">Answering Service</span><br>Available 24 hours a day, 7 days a week</div>
         </div>
       </div>
