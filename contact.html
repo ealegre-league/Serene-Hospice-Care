@@ -272,6 +272,15 @@ img { max-width:100%; display:block; }
   div[style*="grid-template-columns:1.6fr 1fr 1fr 1fr"]{grid-template-columns:1fr!important;}
 }
 </style>
+
+<style>
+@media(max-width:800px){
+  /* Contact page centering */
+  .sh-flex-row > div[style*="flex: 1"]{margin-right:0!important;width:100%!important;}
+  .sh-fixed-col[style*="380px"]{width:100%!important;max-width:100%!important;}
+  .sh-flex-row{padding:0!important;}
+}
+</style>
 </head>
 <body>
 <!-- NAV -->
@@ -381,7 +390,7 @@ img { max-width:100%; display:block; }
   <div class="sh-flex-row" style="max-width:1200px;margin:0 auto;display:flex;gap:64px;align-items:flex-start;">
 
     <!-- FORM -->
-    <div style="flex: 1; margin-right: 10px">
+    <div style="flex: 1; margin-right: 10px; min-width:0;">
       <h2 style="font-family:'Playfair Display',serif;font-size:32px;color:#3D1565;font-weight:700;margin-bottom:28px;">Send Us a Message</h2>
       <form style="display:flex;flex-direction:column;gap:20px;" onsubmit="this.querySelector('.submit-btn').textContent='Message Sent! We\'ll be in touch soon.';this.querySelector('.submit-btn').style.background='#4CAF50';return false;">
         <div class="sh-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
